@@ -48,7 +48,7 @@ Si eres un desarrollador interesado en contribuir a Alphapp, sigue estos pasos i
 1. **Clona** el repositorio principal de Alphapp o el microservicio específico en el que deseas trabajar.
 2. **Configura tu entorno de desarrollo local**, instalando las dependencias necesarias (lenguajes de programación, bases de datos, herramientas de compilación).
 3. Consulta la documentación específica de cada microservicio en sus respectivos directorios para obtener instrucciones detalladas de instalación y configuración.
-4. Revisa la [Guía de Contribución](https://github.com/alphapp/docs/blob/main/CONTRIBUTING.md) (enlace de ejemplo) para entender el flujo de trabajo de Git, las convenciones de codificación y el proceso para enviar cambios.
+4. Revisa la [Guía de Contribución](https://github.com/alphapx/docs/blob/main/CONTRIBUTING.md) (enlace de ejemplo) para entender el flujo de trabajo de Git, las convenciones de codificación y el proceso para enviar cambios.
 
 ## APIs y Documentación
 
@@ -56,7 +56,7 @@ La documentación de las APIs de Alphapp se encuentra principalmente en los dire
 
 ## Seguridad y Privacidad
 
-La seguridad es una prioridad en Alphapp. Se implementan medidas para prevenir vulnerabilidades comunes, proteger el contenido generado por el usuario (UGC) y garantizar la privacidad de los datos. Para más detalles, consulta la documentación específica sobre [Seguridad](https://github.com/alphapp/docs/blob/main/seguridad.md) (enlace de ejemplo) y las [Políticas de Privacidad]([Enlace a la Política de Privacidad de Alphapp]) y [Términos de Servicio]([Enlace a los Términos de Servicio de Alphapp]).
+La seguridad es una prioridad en Alphapp. Se implementan medidas para prevenir vulnerabilidades comunes, proteger el contenido generado por el usuario (UGC) y garantizar la privacidad de los datos. Para más detalles, consulta la documentación específica sobre [Seguridad](https://github.com/alphapx/docs/blob/main/seguridad.md) (enlace de ejemplo) y las [Políticas de Privacidad]([Enlace a la Política de Privacidad de Alphapp]) y [Términos de Servicio]([Enlace a los Términos de Servicio de Alphapp]).
 
 ## Pruebas y Monitoreo
 
@@ -64,7 +64,7 @@ Se implementan **estrategias de pruebas exhaustivas** para garantizar la calidad
 
 ## Contribución
 
-Invitamos a la comunidad de desarrolladores a contribuir al proyecto Alphapp. Si deseas participar en el desarrollo, ya sea corrigiendo errores, agregando nuevas funcionalidades o mejorando la documentación, consulta nuestra [Guía de Contribución](https://github.com/alphapp/docs/blob/main/CONTRIBUTING.md) (enlace de ejemplo) para obtener más información sobre cómo involucrarte.
+Invitamos a la comunidad de desarrolladores a contribuir al proyecto Alphapp. Si deseas participar en el desarrollo, ya sea corrigiendo errores, agregando nuevas funcionalidades o mejorando la documentación, consulta nuestra [Guía de Contribución](https://github.com/alphapx/docs/blob/main/CONTRIBUTING.md) (enlace de ejemplo) para obtener más información sobre cómo involucrarte.
 
 ## Licencia
 
