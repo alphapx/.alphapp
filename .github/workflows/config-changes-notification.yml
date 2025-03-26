@@ -1,0 +1,67 @@
+name: Notificar Cambios en Configuración
+
+# Se activa en cada push a la rama principal del repositorio `.github`.
+on:
+  push:
+    branches: [main] # Asegúrate de ajustar esto a tu rama principal si es diferente
+    paths:
+      - '.github/markdown-validation.yml'
+      - '.github/pull-request-template-validation.yml'
+      # Puedes agregar aquí otros archivos de configuración importantes
+      # Ejemplo:
+      # - '.github/CODE_OF_CONDUCT.md'
+      # - '.github/CONTRIBUTING.md'
+
+jobs:
+  send-notification:
+    name: Enviar notificación de cambios
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2 # Necesario para comparar el commit actual con el anterior
+
+      - name: Identificar archivos modificados
+        id: changed-files
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.event.after }} > changed_files.txt
+          cat changed_files.txt
+
+      - name: Filtrar archivos de configuración clave modificados
+        id: filter-config-files
+        run: |
+          modified_files=$(cat changed_files.txt | grep -E '(.github/markdown-validation\.yml|.github/pull-request-template-validation\.yml)' | paste -sd,)
+          echo "modified_files=$modified_files" >> $GITHUB_OUTPUT
+
+      - name: Enviar notificación (si hay cambios en archivos clave)
+        if: steps.filter-config-files.outputs.modified_files
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const core = require('@actions/core');
+            const modifiedFiles = core.getInput('modified_files');
+            const commitAuthor = github.event.commits.author.name;
+            const commitMessage = github.event.commits.message;
+            const commitUrl = github.event.compare;
+
+            const notificationMessage = `🚨 **Cambios detectados en archivos de configuración clave:**
+            Los siguientes archivos de configuración en el repositorio \`.github\` han sido modificados en el commit por ${commitAuthor}:
+            \`\`\`
+            ${modifiedFiles}
+            \`\`\`
+            Mensaje del commit: ${commitMessage}
+            Ver los cambios: ${commitUrl}`;
+
+            console.log(notificationMessage);
+            // Aquí puedes agregar la lógica para enviar la notificación a tu plataforma preferida
+            // (Slack, correo electrónico, etc.). Por ejemplo, usando una Action específica
+            // para Slack o enviando una petición HTTP a un webhook.
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          inputs:
+            modified_files: ${{ steps.filter-config-files.outputs.modified_files }}
+
+      - name: No se encontraron cambios en archivos clave
+        if: steps.filter-config-files.outputs.modified_files == ''
+        run: echo "No se encontraron cambios en los archivos de configuración clave."
