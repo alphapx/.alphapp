@@ -1,0 +1,38 @@
+name: Validar Markdown
+
+# Se activa en cada push y pull request a todas las ramas.
+on:
+  push:
+  pull_request:
+
+jobs:
+  markdownlint:
+    name: Ejecutar Markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Puedes usar una versión más reciente si lo prefieres
+
+      - name: Instalar dependencias de Markdownlint CLI2
+        run: npm install markdownlint-cli2
+
+      - name: Ejecutar Markdownlint
+        run: npx markdownlint-cli2 '**/*.md'
+
+      - name: Reportar problemas (si hay)
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const output = process.env.MARKDOWNLINT_OUTPUT;
+            if (output) {
+              console.log(output);
+              core.setFailed('Se encontraron problemas de formato en los archivos Markdown.');
+            }
+          env:
+            MARKDOWNLINT_OUTPUT: ${{ steps.markdownlint.outcome == 'failure' && steps.markdownlint.outputs.stdout }}
