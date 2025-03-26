@@ -1,0 +1,58 @@
+name: Validar Plantilla de Pull Request
+
+# Se activa en cada push y pull request a la rama principal del repositorio `.github`.
+on:
+  push:
+    branches: [main] # Asegúrate de ajustar esto a tu rama principal si es diferente
+    paths:
+      - .github/PULL_REQUEST_TEMPLATE.md
+  pull_request:
+    branches: [main] # Asegúrate de ajustar esto a tu rama principal si es diferente
+    paths:
+      - .github/PULL_REQUEST_TEMPLATE.md
+
+jobs:
+  validate-template:
+    name: Validar existencia y contenido básico de la plantilla
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Verificar existencia del archivo de plantilla
+        id: check-file
+        uses: andymckay/gh-action-fs@v3
+        with:
+          command: exists
+          path: .github/PULL_REQUEST_TEMPLATE.md
+
+      - name: Verificar contenido básico de la plantilla
+        if: steps.check-file.outputs.exists == 'true'
+        id: check-content
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const templatePath = '.github/PULL_REQUEST_TEMPLATE.md';
+            const content = fs.readFileSync(templatePath, 'utf8');
+
+            // Define palabras clave o secciones mínimas esperadas en la plantilla
+            const expectedKeywords = [
+              'Descripción del cambio',
+              'Motivación y contexto',
+              '¿Cómo se ha probado?',
+            ];
+
+            const missingKeywords = expectedKeywords.filter(keyword => !content.includes(keyword));
+
+            if (missingKeywords.length > 0) {
+              core.setFailed(`La plantilla de Pull Request falta las siguientes secciones o palabras clave: ${missingKeywords.join(', ')}`);
+            } else {
+              console.log('La plantilla de Pull Request contiene las secciones básicas esperadas.');
+            }
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Reportar si el archivo no existe
+        if: steps.check-file.outputs.exists == 'false'
+        run: echo "Advertencia: El archivo .github/PULL_REQUEST_TEMPLATE.md no existe."
