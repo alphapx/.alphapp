@@ -22,9 +22,9 @@ La organización Alphapp en GitHub se estructura de la siguiente manera:
 
 1. **Dominios Principales**:
     * **[`alphapp.xyz`](https://github.com/alphapx/alphapp.xyz) (Plataforma Central)**: Contiene los repositorios relacionados con la funcionalidad principal de Alphapp, incluyendo:
-        * [`alphapp.xyz/users`](https://github.com/alphapx/alphapp.xyz/tree/main/user): Microservicio de gestión de usuarios.
+        * [`alphapp.xyz/users`](https://github.com/alphapx/alphapp.xyz/tree/main/users): Microservicio de gestión de usuarios.
         * [`alphapp.xyz/analytics`](https://github.com/alphapx/alphapp.xyz/tree/main/analytics): Microservicio de análisis de datos y aprendizaje automático.
-        * [`alphapp.xyz/content`](https://github.com/alphapx/alphapp.xyz/tree/main/content): Microservicio de gestión de contenidos.
+        * [`alphapp.xyz/content`](https://github.com/alphapx/alphapp.xyz/tree/main/contents): Microservicio de gestión de contenidos.
         * [`alphapp.xyz/api-gateway`](https://github.com/alphapx/alphapp.xyz/tree/main/api-gateway): API Gateway para la plataforma central.
         * [`alphapp.xyz/docs`](https://github.com/alphapx/alphapp.xyz/tree/main/docs): Documentación de la API y la plataforma central.
     * **[`alphapp.net`](https://github.com/alphapx/alphapp.net) (Comunidad)**: Contiene los repositorios relacionados con la funcionalidad de la comunidad de Alphapp, incluyendo:
