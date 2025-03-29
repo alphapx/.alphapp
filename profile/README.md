@@ -22,23 +22,23 @@ La organización Alphapp en GitHub se estructura de la siguiente manera:
 
 1. **Dominios Principales**:
     * **[`alphapp.xyz`](https://github.com/alphapx/alphapp.xyz) (Plataforma Central)**: Contiene los repositorios relacionados con la funcionalidad principal de Alphapp, incluyendo:
-        * [`alphapp.xyz/users`](https://github.com/alphapx/alphapp.xyz/users): Microservicio de gestión de usuarios.
-        * [`alphapp.xyz/analytics`](https://github.com/alphapx/alphapp.xyz/analytics): Microservicio de análisis de datos y aprendizaje automático.
-        * [`alphapp.xyz/content`](https://github.com/alphapx/alphapp.xyz/content): Microservicio de gestión de contenidos.
-        * [`alphapp.xyz/api-gateway`](https://github.com/alphapx/alphapp.xyz/api-gateway): API Gateway para la plataforma central.
-        * [`alphapp.xyz/docs`](https://github.com/alphapx/alphapp.xyz/docs): Documentación de la API y la plataforma central.
+        * [`alphapp.xyz/users`](https://github.com/alphapx/alphapp.xyz/tree/main/user): Microservicio de gestión de usuarios.
+        * [`alphapp.xyz/analytics`](https://github.com/alphapx/alphapp.xyz/tree/main/analytics): Microservicio de análisis de datos y aprendizaje automático.
+        * [`alphapp.xyz/content`](https://github.com/alphapx/alphapp.xyz/tree/main/content): Microservicio de gestión de contenidos.
+        * [`alphapp.xyz/api-gateway`](https://github.com/alphapx/alphapp.xyz/tree/main/api-gateway): API Gateway para la plataforma central.
+        * [`alphapp.xyz/docs`](https://github.com/alphapx/alphapp.xyz/tree/main/docs): Documentación de la API y la plataforma central.
     * **[`alphapp.net`](https://github.com/alphapx/alphapp.net) (Comunidad)**: Contiene los repositorios relacionados con la funcionalidad de la comunidad de Alphapp, incluyendo:
-        * [`alphapp.net/forums`](https://github.com/alphapx/alphapp.net/forums): Microservicio de foros.
-        * [`alphapp.net/groups`](https://github.com/alphapx/alphapp.net/groups): Microservicio de grupos de usuarios.
-        * [`alphapp.net/chat`](https://github.com/alphapx/alphapp.net/chat): Microservicio de chat en tiempo real.
-        * [`alphapp.net/docs`](https://github.com/alphapx/alphapp.net/docs): Documentación de la API y la comunidad.
+        * [`alphapp.net/forums`](https://github.com/alphapx/alphapp.net/tree/main/forums): Microservicio de foros.
+        * [`alphapp.net/groups`](https://github.com/alphapx/alphapp.net/tree/main/groups): Microservicio de grupos de usuarios.
+        * [`alphapp.net/chat`](https://github.com/alphapx/alphapp.net/tree/main/chat): Microservicio de chat en tiempo real.
+        * [`alphapp.net/docs`](https://github.com/alphapx/alphapp.net/tree/main/docs): Documentación de la API y la comunidad.
 2. **Infraestructura y Automatización**:
-    * [`alphapp/infra`](https://github.com/alphapx/alphapp/infra): Scripts de automatización de infraestructura (Ansible, Terraform, etc.) y configuraciones de servidores.
-    * [`alphapp/docker`](https://github.com/alphapx/alphapp/docker): Dockerfiles y configuraciones de Docker Compose.
-    * [`alphapp/ci-cd`](https://github.com/alphapx/alphapp/ci-cd): Configuraciones de CI/CD (Jenkins, GitHub Actions, etc.).
-    * [`alphapp/elk`](https://github.com/alphapx/alphapp/elk): Configuración del stack ELK para monitoreo y registro.
+    * [`alphapp/infra`](https://github.com/alphapx/alphapp/tree/main/infra): Scripts de automatización de infraestructura (Ansible, Terraform, etc.) y configuraciones de servidores.
+    * [`alphapp/docker`](https://github.com/alphapx/alphapp/tree/main/docker): Dockerfiles y configuraciones de Docker Compose.
+    * [`alphapp/ci-cd`](https://github.com/alphapx/alphapp/tree/main/ci-cd): Configuraciones de CI/CD (Jenkins, GitHub Actions, etc.).
+    * [`alphapp/elk`](https://github.com/alphapx/alphapp/tree/main/elk): Configuración del stack ELK para monitoreo y registro.
 3. **Documentación General**:
-    * [`alphapp/docs`](https://github.com/alphapx/alphapp/docs): Documentación general de la plataforma Alphapp, incluyendo arquitectura, diseño y guías de desarrollo.
+    * [`alphapp/docs`](https://github.com/alphapx/alphapp/tree/main/docs): Documentación general de la plataforma Alphapp, incluyendo arquitectura, diseño y guías de desarrollo.
 4. **Otros directorios**: Pueden incluir archivos como `Dockerfile` y `requirements.txt` específicos de cada repositorio.
 
 ## Primeros Pasos para Desarrolladores
@@ -52,7 +52,7 @@ Si eres un desarrollador interesado en contribuir a Alphapp, sigue estos pasos i
 
 ## APIs y Documentación
 
-La documentación de las APIs de Alphapp se encuentra principalmente en los directorios `docs` dentro de los dominios principales ([`alphapp.xyz/docs`](https://github.com/alphapx/alphapp.xyz-docs) y [`alphapp.net/docs`](https://github.com/alphapx/alphapp.net/docs)). Esta documentación proporciona detalles sobre cómo utilizar las APIs y ejemplos de código.
+La documentación de las APIs de Alphapp se encuentra principalmente en los directorios `docs` dentro de los dominios principales ([`alphapp.xyz/docs`](https://github.com/alphapx/alphapp.xyz/tree/main/docs) y [`alphapp.net/docs`](https://github.com/alphapx/alphapp.net/tree/main/docs)). Esta documentación proporciona detalles sobre cómo utilizar las APIs y ejemplos de código.
 
 ## Seguridad y Privacidad
 
