@@ -1,4 +1,4 @@
-# Repositorio .github de la Organización Alphapp
+# Repositorio .alphapp de la Organización Alphapx
 
 ## Introducción
 
