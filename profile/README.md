@@ -62,7 +62,7 @@ La seguridad es una prioridad en Alphapp. Se implementan medidas para prevenir v
 
 Se implementan **estrategias de pruebas exhaustivas** para garantizar la calidad y estabilidad de la plataforma, incluyendo pruebas unitarias, de integración, de rendimiento y de seguridad. Se utilizan herramientas de monitoreo para asegurar el rendimiento continuo de los servicios.
 
-## Contribución
+## Contribución 
 
 Invitamos a la comunidad de desarrolladores a contribuir al proyecto Alphapp. Si deseas participar en el desarrollo, ya sea corrigiendo errores, agregando nuevas funcionalidades o mejorando la documentación, revisa nuestra [Guía de Contribución](https://github.com/alphapx/docs/blob/main/CONTRIBUTING.md).
 
